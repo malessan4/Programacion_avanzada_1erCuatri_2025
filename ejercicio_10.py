@@ -1,10 +1,13 @@
+from math import ceil 
+
 def calculo_transporte(primero, segundo, tercero, colectivo):
     cantidad_primero = primero + 3
     cantidad_segundo = segundo + 3
     cantidad_tercero = tercero + 3
     cantidad_total = cantidad_primero + cantidad_segundo + cantidad_tercero
     cantidad_micros = cantidad_total / colectivo
-    print(f'La cantidad de micros necesarios es {cantidad_micros}')
+    cantidad_redondeada = ceil(cantidad_micros) #con esta función redondeo el numero para arriba
+    print(f'La cantidad de micros necesarios es {cantidad_redondeada}')
     
 sala_primero = int(input('Ingrese la cantidad de alumnos de la 1er salita '))
 sala_segundo = int(input('Ingrese la cantidad de alumnos de la 2da salita '))
