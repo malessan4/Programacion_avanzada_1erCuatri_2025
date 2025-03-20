@@ -1,0 +1,86 @@
+ 1. Aspectos conceptuales
+a) ¿Qué ventajas tiene la utilización de funciones?
+b) ¿Hay algún cuidado en el orden en el que se pasan los parámetros a una función?
+c) ¿Cuándo uso la sentencia return?
+d) ¿Qué diferencia hay entre la definición y la invocación de una función?
+e) ¿Qué son los parámetros formales y para qué sirven? Ejemplifique.
+f) ¿Qué son los parámetros reales y para qué sirven? Ejemplifique.
+g) ¿Qué significa el cuerpo de una función? Ejemplifique.
+h) ¿Existen funciones sin parámetros o argumentos?
+i) ¿Puede usar una letra o un número como parámetro formal? ¿Y como parámetro real?
+j) ¿Puedo tener una cantidad distinta de parámetros formales que reales en una función?
+k) ¿Cómo se puede implementar un módulo con solo definiciones de funciones e importarlo desde
+tu programa? ¿Cuáles son las formas de importar que ofrece Python?
+l) ¿Qué diferencias hay entre los siguientes códigos?
+i) import math
+ii) from math import sqrt
+
+
+a) las ventajas de la utilización de funciones son la posibilidad de reutilización de código, la modularidad que se puede dividir las partes grandes del programa en partes más pequeñas conservando independencia y más facilidad para correjir error y la escalabilidad, ademas de poder encapsular que permite ocultar detalles de implementación.
+
+b) si, el orden es importantisimo, ya que con ese se debe pasar los parametros con el orden que la función espera recibirlos.
+
+c) todas las funciones devuelven un valor cuando se ejecutan
+
+segun el libro Aprenda a Pensar Como un Programador con Python de Downey, Elkner y Meyers
+la sentencia return le permite terminar la ejecución de una función antes de alcanzar su final.
+
+segun luis llamas la instrucción return se utiliza para devolver un valor desde una función, al punto desde donde se llamó la función.
+
+d)definir, con el nombre reservado def es ponerle un nombre, añadir parametros, añadir sentencias que deban ejecutarse y el valor de devuelve. Invocar una función significa ejecutar la función que has definido, ya sea directamente desde el prompt de Python o a través de otra función 
+
+e) los parametros formales son los parametros que se pasan cuando se esta definiendo una funcion por ejemplo
+
+def rectanguloPerimetro (base, altura) 
+# base y altura son parametros formales
+
+f) los parametros reales son los parametros que se pasan cuando se invoca a una función por ejemplo
+
+rectanguloPerimetro (4, 6)
+# 4 es la base y 6 es la altura
+
+
+g) el cuerpo de una función es el bloque de codigo que especifica que es lo que hace una función. por ejemplo
+
+    def areaCuadrado(self):
+        resultado = self.lado ** 2 
+        print(f'El area del cuadrado es: {resultado} ')
+
+el cuerpo es la sentencia debajo de def
+
+h) si, existen funciones sin parametros o sin argumentos, no reciben ningun valor de entrada cuando son llamadas pero igual pueden ejecutar la tarea que esta escrita en el cuerpo de la función. parametro es formal y argumento son reales
+
+i) en los parametros formales pueden empezar con una letra pero no puede empezar con un numero, por la regla general de los nombres de variables
+
+en cambio en los parametros reales si puede ser una letra pero como tiene que ser tipo string, o un numero o un booleano incluso.
+
+j) no, no se puede, se debe siempre pasar la misma cantidad de parametros reales como tiene de parametros formales
+
+k) un módulo se implementa de la siguiente manera: se crea un fichero .py externo al programa principal, se importa usando import al principio del programa principal.
+
+las formas de importar en python son muchas, entre las más importantes 
+
+import modulo (se importa el modulo completo)
+
+from modulo import elemento1, elemento2, .... (importa varias funciones, clases o variables específicas de un módulo. no es necesario el uso del prefijo)
+
+from modulo import *  (importa todas las funciones, clases y variables del módulo, pudiendo usarlas sin el prefijo del módulo.
+
+------------------
+
+import modulo as alias (importar un módulo con un alias, te da la posibilidad de escribir el prefijo del módulo con el alias que el programador especifico)
+
+from modulo import elemento (importa un solo elemento) no es necesario el uso de prefijo.
+
+from paquete import submodulo (importa un paquete que contien submodulos, solamente un submodulo específivo)
+
+ejemplo
+from os import path
+print (path.join("carpeta", "archivo.txt"))
+
+l) en import math, importa todo el módulo math, lo bueno es que vas a poder usar otras funciones ademas de sqrt como math.pi. Lo malo es que siempre se debe escribir el prefijo math.
+
+en from math import sqrt, solo se importa la función sqrt, lo bueno que no hace falta escribir el prefijo math.
+
+
+

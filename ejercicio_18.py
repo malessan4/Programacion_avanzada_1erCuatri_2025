@@ -27,7 +27,7 @@ def sumaFracciones(a, b):
     else:
         sumaNumerador = ( a[0] * b[1] ) + (b[0] * a[1])
         sumaDenominador = a[1] * b[1]
-        resultadoSuma = sumaNumerador / sumaDenominador
+        resultadoSuma = sumaNumerador,  sumaDenominador
         return resultadoSuma
 
 
@@ -43,6 +43,8 @@ numeradorFraccion1 = numeradorFraccion(fragB)
 
 sumando = sumaFracciones(fragA, fragB)
 
+print()
+
 print(f'El denominador de la primera fraccion es: {denominardorFraccion1}')
-print(f'El numerado de la segunda fracción es: {numeradorFraccion1}')
+print(f'El numerador de la segunda fracción es: {numeradorFraccion1}')
 print(f'La sumas de dichas funciones es: {sumando}')
