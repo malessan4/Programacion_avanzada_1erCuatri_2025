@@ -1,5 +1,8 @@
 class Dolar:
-    def convertir_a_dolar(pesos):
+    def __init__(self, pesos):
+        self.pesos = pesos
+    
+    def convertir_a_dolar():
         dolar = pesos / 1260
         print(f'La cantidad ${pesos} son USD ${dolar}')
 

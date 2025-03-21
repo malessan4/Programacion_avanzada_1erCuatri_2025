@@ -17,7 +17,7 @@ def denominadorFraccion(fraccion):
 def sumaFracciones(a, b):
     if a[1] == b[1]:
         sumaNumerador = a[0] + b[0]
-        resultadoSumaD = sumaNumerador / b[1]
+        resultadoSumaD = sumaNumerador, b[1]
         return resultadoSumaD
     
     else:
@@ -31,7 +31,7 @@ def sumaFracciones(a, b):
 def restaFracciones (a,b):
     if a[1] == b[1]:
         restaNumerador = a[0] - b[0]
-        resultadoRestaD = restaNumerador, resultadoRestaD
+        resultadoRestaD = restaNumerador, a[1]
         return resultadoRestaD
 
     else:
@@ -53,7 +53,7 @@ def multiplicacionFraccion (a, b):
 def divisionFraccion(a,b):
     if a[1] == b[1]:
         divisionNumerador = a[0] * a[1]
-        divisionDenominador = a[1] * b(0)
+        divisionDenominador = a[1] * b[0]
         resultadoDenominadorD = divisionNumerador, divisionDenominador
         return resultadoDenominadorD
 
