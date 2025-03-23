@@ -1,95 +1,103 @@
+# Se crea el objeto Fraccion 
 class Fraccion:
-    def cargarFraccion():
-        numerador = int(input('Ingrese el numerador: '))
-        denominador = int(input('Ingrese el denominador: '))
-        fraccion_lista = []
-        fraccion_lista.append(numerador)
-        fraccion_lista.append(denominador)
-        return fraccion_lista
+    def __init__(self, a=0, b=1):
+        self.fracciones = [a, b]
+        
 
-    def numeradorFraccion(fraccion_lista ):
-        return fraccion_lista [0]
+    def cargarFraccion(self):
+        a = int(input('Ingrese el valor del NUMERADOR: '))
+        b = int(input('Ingrese el valor del DENOMINADOR: '))
+        self.fracciones[0] = a
+        self.fracciones[1] = b
 
-    def denominadorFraccion(fraccion_lista ):
-        return fraccion_lista [1]
+    def numerador(self):
+        return self.fracciones[0]
+
+    def denominador(self):
+        return self.fracciones[1]
+
+    def __str__(self):
+        return str(self.fracciones[0]) + '/' + str(self.fracciones[1])
+
 
 
 # SUMA
-    def sumaFracciones(fragA, fragB):
-        if fragA[1] == fragB[1]:
-            sumaNumerador = fragA[0] + fragB[0]
-            resultadoSumaD = sumaNumerador, fragB[1]
-            return resultadoSumaD
-    
+    def sumaFracciones(self, otra_fraccion):
+        num1 = self.numerador()
+        den1 = self.denominador()
+        num2 = otra_fraccion.numerador()
+        den2 = otra_fraccion.denominador()
+        if den1 == den2:
+            nuevo_numerador = num1 + num2
+            mismo_denominador = den1
+            print(f'La suma de las fracciones da: {nuevo_numerador}/{mismo_denominador}')
+            return Fraccion(nuevo_numerador, mismo_denominador)
+
         else:
-            sumaNumerador = ( fragA[0] * fragB[1] ) + (fragB[0] * fragA[1])
-            sumaDenominador = fragA[1] * fragB[1]
-            resultadoSuma = sumaNumerador,  sumaDenominador
-            return resultadoSuma
-    
-    
+            nuevo_numerador = (num1 * den2) + (num2 * den1)
+            nuevo_denominador = den1 * den2
+
+            print(f'La suma de las fracciones da: {nuevo_numerador}/{nuevo_denominador}')
+            return Fraccion(nuevo_numerador, nuevo_denominador)
+
+
 # RESTA
-    def restaFracciones (fragA,fragB):
-        if fragA[1] == fragB[1]:
-            restaNumerador = fragA[0] - fragB[0]
-            resultadoRestaD = restaNumerador, fragA[1]
-            return resultadoRestaD
-
+    def restaFracciones(self, otra_fraccion):
+        num1 = self.numerador()
+        den1 = self.denominador()
+        num2 = otra_fraccion.numerador()
+        den2 = otra_fraccion.denominador()
+        if den1 == den2:
+            nuevo_numerador = num1 - num2
+            mismo_denominador = den1
+            print(f'La resta de las fracciones da: {nuevo_numerador}/{mismo_denominador}')
+            return Fraccion(nuevo_numerador, mismo_denominador)
         else:
-            restaNumerador = ( fragA[0] * fragB[1] ) - (fragB[0] * fragA[1])
-            restaDenominador = fragA[1] * fragB[1]
-            resultadoResta = restaNumerador,  restaDenominador
-            return resultadoResta
-        
-        
-# MULTIPLICACION
-    def multiplicacionFraccion (fragA, fragB):
-        multiNumerador = fragA[0] * fragB[0]
-        multiDenominador = fragA[1] * fragB[1]
-        resultadoMulti = multiNumerador , multiDenominador
-        return resultadoMulti
+            nuevo_numerador = (num1 * den2) - (num2 * den1)
+            nuevo_denominador = den1 * den2
+            print(f'La resta de las fracciones da: {nuevo_numerador}/{nuevo_denominador}')
+            return Fraccion(nuevo_numerador, nuevo_denominador)
 
+
+# MULTIPLICACION
+
+    def multiFracciones(self, otra_fraccion):
+        num1 = self.numerador()
+        den1 = self.denominador()
+        num2 = otra_fraccion.numerador()
+        den2 = otra_fraccion.denominador()
+        nuevo_numerador = num1 * num2
+        nuevo_denominador = den1 * den2
+        print(f'La multiplicacion de las fracciones da: {nuevo_numerador}/{nuevo_denominador}')
+        return Fraccion(nuevo_numerador, nuevo_denominador)
 
 # DIVISION
-    def divisionFraccion(fragA,fragB):
-        if fragA[1] == fragB[1]:
-            divisionNumerador = fragA[0] * fragA[1]
-            divisionDenominador = fragA[1] * fragB[0]
-            resultadoDenominadorD = divisionNumerador, divisionDenominador
-            return resultadoDenominadorD
 
+    def diviFracciones(self, otra_fraccion):
+        num1 = self.numerador()
+        den1 = self.denominador()
+        num2 = otra_fraccion.numerador()
+        den2 = otra_fraccion.denominador()
+        if den1 == den2:
+            nuevo_numerador = num1 * num2
+            nuevo_denominador = num2 * den1
+            print(f'La division de las fracciones da: {nuevo_numerador}/{nuevo_denominador}')
+            return Fraccion(nuevo_numerador, nuevo_denominador)
         else:
-            divisionNumerador = fragA[0] * fragB[1]   
-            divisionDenominador = fragA[1] * fragB[0]
-            resultadoDivision = divisionNumerador,  divisionDenominador
-            return resultadoDivision    
+            nuevo_numerador = num1 * den2
+            nuevo_denominador = num2 * den1
+            print(f'La division de las fracciones da: {nuevo_numerador}/{nuevo_denominador}')
+            return Fraccion(nuevo_numerador, nuevo_denominador)
 
 print("Bienvenidos/as a cuentas con Fracciones")
-fragA = Fraccion
-fragA.cargarFraccion()
+fracA = Fraccion ()
+fracA.cargarFraccion()
+print(fracA)
+fracB = Fraccion ()
+fracB.cargarFraccion()
+print(fracB)
+suma = fracA.sumaFracciones(fracB)
+resta = fracA.restaFracciones(fracB)
+multi = fracA.multiFracciones(fracB)
+divi = fracA.diviFracciones(fracB)
 
-fragB = Fraccion
-fragB.cargarFraccion()
-
-denominardorFraccion1 = fragA.denominadorFraccion
-
-numeradorFraccion1 = fragB.numeradorFraccion
-
-fragA.sumaFracciones(fragA, fragB)
-
-fragA.restaFracciones(fragA, fragB)
-
-fragA.multiplicacionFraccion(fragA, fragB)
-
-fragA.divisionFraccion(fragA, fragB)
-print()
-
-print(f'El denominador de la primera fraccion es: {denominardorFraccion1}')
-print(f'El numerador de la segunda fracción es: {numeradorFraccion1}')
-
-print()
-
-print(f'La sumas de dichas funciones es: {fragA.sumaFracciones}')
-print (f'La resta de dichas funciones es: {fragA.restaFracciones}')
-print (f'La multiplicación de dichas funciones es: {fragA.multiplicacionFraccion}')
-print(f'La division de dichas funciones es {fragA.divisionFraccion}')
