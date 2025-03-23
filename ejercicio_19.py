@@ -1,29 +1,44 @@
 class Dolar:
-    def __init__(self, pesos):
-        self.pesos = pesos
+    def __init__(self, valor=0):
+        self.valor = valor 
+
+    def __str__(self):
+        return 'USD$: ' + str(self.valor) 
+
+    def convertirDolar(self): 
+        cambio = self.valor * 1260
+        print(f'El cambio de {self.valor} dolares es de ${cambio} pesos')
+
+class Euro:
+    def __init__(self, valor=0):
+        self.valor = valor
+
+    def __str__(self):
+        return 'Euro$: ' + str(self.valor)
     
-    def convertir_a_dolar():
-        dolar = pesos / 1260
-        print(f'La cantidad ${pesos} son USD ${dolar}')
+    def convertirEuro(self):
+        cambio = self.valor * 1130
+        print(f'El cambio de {self.valor} euros es de ${cambio} pesos')
 
-class Euro:    
-    def convertir_a_euro(pesos):
-        euro = pesos / 1130
-        print(f'La cantidad ${pesos} son Euros ${euro}')
+class Real:
+    def __init__(self, valor=0):
+        self.valor = valor
 
-class Real:    
-    def convertir_a_real (pesos):
-        real = pesos / 190
-        print(f'La cantidad ${pesos} son Reales ${real}')
+    def __str__(self):
+        return 'Real$: ' +  str(self.valor)
     
-pesos_a_cambiar = float(input('Ingrese la cantidad de pesos que va a cambiar: $'))
+    def convertirReal(self):
+        cambio = self.valor * 240
+        print(f'El cambio de {self.valor} reales es de ${cambio} pesos')
 
-cambio_a_dolar = Dolar
-cambio_a_dolar.convertir_a_dolar(pesos_a_cambiar)
+moneda = Dolar(300)
+print(moneda) 
+moneda.convertirDolar()
 
-cambio_a_euro = Euro
-cambio_a_euro.convertir_a_euro(pesos_a_cambiar)
+moneda2 = Euro(400)
+print(moneda2)
+moneda2.convertirEuro()
 
-
-cambio_a_real = Real
-cambio_a_euro.convertir_a_real(pesos_a_cambiar)
+moneda3 = Real(500)
+print(moneda3)
+moneda3.convertirReal()
